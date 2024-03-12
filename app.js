@@ -55,6 +55,9 @@ app.use("*",(req,res)=>{
   })
 })
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+// Start the server
+const server = app.listen(process.env.PORT || port, () => {
+  const port = server.address().port;
+  console.log(`Server is running on port ${port}`);
 });
+
